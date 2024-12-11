@@ -5,9 +5,9 @@ const Navbar = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    // Create a GSAP context for better React integration
-    const ctx = gsap.context(() => {
-      // Animation logic
+    
+    const navAnimation = gsap.context(() => {
+    
       gsap.from(menuRef.current, {
         y: -50,
         opacity: 0,
@@ -16,9 +16,8 @@ const Navbar = () => {
       });
     });
 
-    // Cleanup animation on unmount
-    return () => ctx.revert();
-  }, []); // No dependencies to ensure it runs once when the component mounts
+    return () => navAnimation.revert();
+  }, []); 
   return (
     <>
       <header>
@@ -41,7 +40,7 @@ const Navbar = () => {
           <div className="cta_nav">
             <a
               href=""
-              className="bg-gradient-to-r from-[#C2C3C7] to-[#D4AF37] text-white font-bold py-2 px-4 rounded transition-all duration-300 hover:bg-gradient-to-r hover:from-[#D4AF37] hover:to-[#C2C3C7]"
+              className="bg-[#FFA500] text-white font-bold py-2 px-4 rounded transition-all duration-300 hover:bg-[#C2C3C7]"
             >
               Get a Quote
             </a>
