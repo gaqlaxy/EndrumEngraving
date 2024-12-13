@@ -1,5 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { FaTools, FaGem } from "react-icons/fa";
+import { BsUsbDriveFill } from "react-icons/bs";
 
 const ServicesSection = () => {
   const { ref: serviceRef1, inView: inView1 } = useInView({
@@ -38,7 +40,7 @@ const ServicesSection = () => {
             }`} // Applying animation on in-view
           >
             <div className="text-[#D4AF37] text-4xl mb-4">
-              <i className="fas fa-tools"></i>
+              <FaTools />
             </div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">
               Metal Tool Engraving
@@ -60,7 +62,7 @@ const ServicesSection = () => {
             }`}
           >
             <div className="text-[#D4AF37] text-4xl mb-4">
-              <i className="fas fa-gem"></i>
+              <FaGem />
             </div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">
               Jewelry Engraving
@@ -82,7 +84,7 @@ const ServicesSection = () => {
             }`}
           >
             <div className="text-[#D4AF37] text-4xl mb-4">
-              <i className="fas fa-usb"></i>
+              <BsUsbDriveFill />
             </div>
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">
               USB Drive Engraving

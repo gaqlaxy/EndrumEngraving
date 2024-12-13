@@ -22,7 +22,7 @@ const Navbar = () => {
       <header>
         <nav
           ref={menuRef}
-          className="flex items-center justify-between mx-4 mt-4 "
+          className="flex items-center justify-between mx-4 mt-4  "
         >
           <div className="logo">
             {/* <img src="logo.png" alt="" className="w-20" /> */}
@@ -38,7 +38,12 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="cta_nav">
-            <GradientButton />
+            <button
+              className="quote-button"
+              // Match GSAP initial state
+            >
+              Get Quote
+            </button>
           </div>
         </nav>
       </header>

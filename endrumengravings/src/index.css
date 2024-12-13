@@ -6,6 +6,7 @@
   body {
     background-color: #2e2f33;
     color: #f2f2ef;
+    /* 1C1C1C */
   }
   .hero-container {
     position: relative;
@@ -74,6 +75,16 @@
     transition: transform 0.3s ease;
     border: none;
   }
+  .quote-button {
+    background: linear-gradient(to right, #c2c3c7, #d4af37);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    border: none;
+  }
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px; /* width of the scrollbar */
@@ -91,5 +102,101 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: #b28c26; /* Slightly darker golden color on hover */
+  }
+
+  .testimonials-section {
+    background-color: #2e2f33;
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .testimonials-container {
+    display: flex; /* Align cards horizontally by default */
+    justify-content: center; /* Center the cards */
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
+  }
+
+  .testimonial-card {
+    position: relative;
+    width: 250px; /* Set a fixed width for all cards */
+    background-color: #333;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Ensure the card is visible */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  /* Profile Image */
+  .testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+
+  .testimonial-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .testimonial-title {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  .testimonial-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hover effect for all cards */
+  .testimonial-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+
+  /* Responsive Styles */
+
+  /* On small screens (mobile), stack the cards vertically */
+  @media (max-width: 767px) {
+    .testimonials-container {
+      flex-direction: column; /* Stack cards vertically */
+      gap: 20px; /* Adjust spacing */
+    }
+
+    .testimonial-card {
+      width: 100%; /* Take full width on mobile */
+    }
+
+    /* Hover effect for mobile (optional) */
+    .testimonial-card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow on hover */
+    }
+  }
+
+  /* On medium screens (tablets), adjust card width and layout */
+  @media (max-width: 1024px) {
+    .testimonial-card {
+      width: 45%; /* Adjust card width for tablets */
+    }
+
+    /* Hover effect for tablets */
+    .testimonial-card:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Moderate shadow on hover */
+    }
   }
 }
