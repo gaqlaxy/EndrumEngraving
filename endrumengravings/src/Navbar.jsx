@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import GradientButton from "./GradientButton";
 
 const Navbar = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    
     const navAnimation = gsap.context(() => {
-    
       gsap.from(menuRef.current, {
         y: -50,
         opacity: 0,
@@ -17,7 +16,7 @@ const Navbar = () => {
     });
 
     return () => navAnimation.revert();
-  }, []); 
+  }, []);
   return (
     <>
       <header>
@@ -26,7 +25,8 @@ const Navbar = () => {
           className="flex items-center justify-between mx-4 mt-4 "
         >
           <div className="logo">
-            <img src="logo.png" alt="" className="w-20" />
+            {/* <img src="logo.png" alt="" className="w-20" /> */}
+            <h1>Endrum Engravings</h1>
           </div>
           <div className="menu_items">
             <ul className="flex gap-8 space-x-6">
@@ -38,12 +38,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="cta_nav">
-            <a
-              href=""
-              className="bg-[#FFA500] text-white font-bold py-2 px-4 rounded transition-all duration-300 hover:bg-[#C2C3C7]"
-            >
-              Get a Quote
-            </a>
+            <GradientButton />
           </div>
         </nav>
       </header>
