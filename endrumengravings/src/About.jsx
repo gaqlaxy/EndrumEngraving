@@ -7,7 +7,7 @@ const AboutSection = () => {
         {/* Left Side Text */}
         <div className="text-white">
           <h2 className="text-4xl font-bold mb-6">
-            About <span className="text-[#FFA500]">Us</span>
+            About <span className="text-[#FAA500]">Us</span>
           </h2>
           <p className="text-lg mb-4">
             We are a passionate team of engravers dedicated to bringing

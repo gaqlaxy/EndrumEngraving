@@ -7,8 +7,8 @@ const ContactSection = () => {
     message: "",
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false); // To track submission status
-  const [isSubmitting, setIsSubmitting] = useState(false); // To track submitting state
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,68 +18,93 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Simulate form submission (e.g., API request)
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setIsSubmitting(false);
+    const { name, email, message } = formData;
 
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormData({ name: "", email: "", message: "" });
-        setIsSubmitted(false); // Hide success message after resetting
-      }, 2000);
-    }, 1500); // Simulating API request delay
+    // Simple validation
+    if (!name || !email || !message) {
+      setError("All fields are required.");
+      setSuccessMessage("");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError("Please enter a valid email address.");
+      setSuccessMessage("");
+      return;
+    }
+
+    // Clear the form and show success message
+    setFormData({ name: "", email: "", message: "" });
+    setError("");
+    setSuccessMessage("Thank you! Your message has been sent.");
   };
 
   return (
-    <div className="py-16 px-6 bg-[#2e2f33]">
-      <h2 className="text-4xl font-bold text-center text-white mb-12">
-        Contact Us
-      </h2>
-      {isSubmitted ? (
-        <div className="text-center text-white">
-          <p>Thank you for your message! We will get back to you soon.</p>
+    <section className="py-16 bg-gray-900 text-gray-100">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12 max-w-6xl">
+        {/* Left Image */}
+        <div className="w-full lg:w-1/2">
+          <img
+            src="contact1.jpg"
+            alt="Contact us illustration"
+            className="w-full rounded-lg shadow-lg"
+          />
         </div>
-      ) : (
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg"
-        >
-          <div className="space-y-6">
-            <div className="flex flex-col">
-              <label htmlFor="name" className="text-white">
+
+        {/* Right Form */}
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-4xl font-bold  mb-6 text-center lg:text-left">
+            Contact
+            <span className="text-[#FFA500]"> Us</span>
+          </h2>
+          <form
+            onSubmit={handleSubmit}
+            className="bg-gray-800 p-6 rounded-lg shadow-lg"
+          >
+            <div className="mb-4">
+              <label
+                htmlFor="name"
+                className="block text-sm font-semibold text-gray-300"
+              >
                 Name
               </label>
               <input
-                id="name"
                 type="text"
+                id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="p-3 bg-gray-700 text-white rounded-lg"
-                required
+                className="w-full mt-2 p-2 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-[#D4AF37]"
+                placeholder="Enter your name"
               />
             </div>
-            <div className="flex flex-col">
-              <label htmlFor="email" className="text-white">
+
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold text-gray-300"
+              >
                 Email
               </label>
               <input
-                id="email"
                 type="email"
+                id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="p-3 bg-gray-700 text-white rounded-lg"
-                required
+                className="w-full mt-2 p-2 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-[#D4AF37]"
+                placeholder="Enter your email"
               />
             </div>
-            <div className="flex flex-col">
-              <label htmlFor="message" className="text-white">
+
+            <div className="mb-4">
+              <label
+                htmlFor="message"
+                className="block text-sm font-semibold text-gray-300"
+              >
                 Message
               </label>
               <textarea
@@ -87,24 +112,27 @@ const ContactSection = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="p-3 bg-gray-700 text-white rounded-lg"
+                className="w-full mt-2 p-2 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-[#D4AF37]"
+                placeholder="Enter your message"
                 rows="4"
-                required
-              />
+              ></textarea>
             </div>
+
+            {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+            {successMessage && (
+              <p className="text-green-500 text-sm mb-4">{successMessage}</p>
+            )}
+
             <button
               type="submit"
-              className={`w-full py-3 mt-6 bg-gradient-to-r from-[#C2C3C7] to-[#D4AF37] text-white font-semibold rounded-lg ${
-                isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              disabled={isSubmitting}
+              className="w-full py-2 px-4 bg-gradient-to-r from-[#C2C3C7] to-[#D4AF37] text-white font-semibold rounded-lg hover:scale-105 transition-transform"
             >
-              {isSubmitting ? "Submitting..." : "Send Message"}
+              Submit
             </button>
-          </div>
-        </form>
-      )}
-    </div>
+          </form>
+        </div>
+      </div>
+    </section>
   );
 };
 

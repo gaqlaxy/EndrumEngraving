@@ -1,5 +1,6 @@
 import AboutSection from "./About";
 import ContactSection from "./Contact";
+import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
 import PortfolioSection from "./PortfolioSection";
@@ -16,6 +17,7 @@ export default function App() {
       <TestimonialsSection />
       <AboutSection />
       <ContactSection />
+      <Footer />
     </>
   );
 }
