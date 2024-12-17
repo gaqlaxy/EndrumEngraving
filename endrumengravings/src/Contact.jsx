@@ -43,7 +43,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-900 text-gray-100">
+    <section className="py-16 bg-[#2e2f33] text-gray-100">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12 max-w-6xl">
         {/* Left Image */}
         <div className="w-full lg:w-1/2">
