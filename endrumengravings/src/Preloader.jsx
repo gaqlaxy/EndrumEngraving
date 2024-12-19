@@ -6,13 +6,13 @@ const Preloader = () => {
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
-    tl.to(".lightCyan-slider", {
+    tl.to(".lightGold-slider", {
       x: "-10%",
       duration: 1,
     });
 
     tl.to(
-      ".persianGreen-slider",
+      ".lightGrey-slider",
       {
         x: "-20%",
         duration: 1.5,
@@ -46,8 +46,8 @@ const Preloader = () => {
       <div className="prl-logo">
         <h1 className="hide">Crafting Precision</h1>
       </div>
-      <div className="lightCyan-slider"></div>
-      <div className="persianGreen-slider"></div>
+      <div className="lightGold-slider"></div>
+      <div className="lightGrey-slider"></div>
       <div className="white-slider"></div>
     </div>
   );

@@ -220,8 +220,8 @@
   }
 
   /* Sliders  */
-  .lightCyan-slider,
-  .persianGreen-slider,
+  .lightGold-slider,
+  .lightGrey-slider,
   .white-slider {
     position: fixed;
     top: 0;
@@ -230,11 +230,11 @@
     height: 100%;
     transform: translateX(-100%);
   }
-  .lightCyan-slider {
+  .lightGold-slider {
     background: #ffa500;
   }
 
-  .persianGreen-slider {
+  .lightGrey-slider {
     background: #2e2f33;
   }
 
