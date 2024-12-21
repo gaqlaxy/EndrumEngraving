@@ -5,18 +5,18 @@ import GradientButton from "./GradientButton";
 const Navbar = () => {
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    const navAnimation = gsap.context(() => {
-      gsap.from(menuRef.current, {
-        y: -50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      });
-    });
+  // useEffect(() => {
+  //   const navAnimation = gsap.context(() => {
+  //     gsap.from(menuRef.current, {
+  //       y: -50,
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: "power3.out",
+  //     });
+  //   });
 
-    return () => navAnimation.revert();
-  }, []);
+  //   return () => navAnimation.revert();
+  // }, []);
   return (
     <>
       <header>
