@@ -22,7 +22,7 @@ const Navbar = () => {
       <header>
         <nav
           ref={menuRef}
-          className="flex items-center justify-between mx-4 mt-4  "
+          className="flex items-center justify-between mx-4 mt-4 pb-4  "
         >
           <div className="logo">
             {/* <img src="logo.png" alt="" className="w-20" /> */}

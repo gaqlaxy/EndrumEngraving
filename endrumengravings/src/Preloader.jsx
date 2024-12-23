@@ -66,7 +66,7 @@ const Preloader = () => {
     tl.to(".lightGold-slider", { x: "-10%", duration: 1 });
     tl.to(".lightGrey-slider", { x: "-20%", duration: 1.5 }, "-=1");
     tl.to(".white-slider", { x: "-30%", duration: 1.5 }, "-=1");
-    tl.to(".hide", { x: "0%", duration: 2, opacity: 1 });
+    tl.to(".hide", { x: "0%", duration: 1, opacity: 1 });
 
     // Closing animation with opacity fade
     tl.to(".preloader", {
